@@ -1,2 +1,2 @@
 # CodeBot-AI
-an Advanced AI Chatbot with multilanguage support
+ an AI advanced multifunctional chatbot

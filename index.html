@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeBot-AI</title>
+    <link rel="icon" href="./comment-dots-solid.svg">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="overflow-x-hidden">
+    
+    <div class="loader hidden  fixed z-30 text-6xl  sm:text-6xl md:text-7xl lg:text-7xl xl:text-9xl w-full min-h-[100vh] bg-black p-9 flex justify-center items-center bg-opacity-50 ">
+        <i class="fa-solid fa-spinner text-purple-400 animate-spin select-none "></i>
+    </div>
+     
+
+    <!-- container -->
+    <div class="w-[100vw] min-h-[100vh]  bg-gray-200 dark:bg-gray-950 flex flex-col justify-center items-center gap-2 ">
+
+        <!-- top dark mode button -->
+        <div darkModeBtn title="dark" class="fixed top-5 right-5 text-sm lg:text-2xl md:text-xl sm:text-lg cursor-pointer z-20 hover:scale-[1.2] transition duration-75"> 
+            <i class="fa-solid fa-lightbulb dark:text-yellow-300 select-none"></i>
+        </div>
+
+        
+
+       
+
+        <!-- welcome container -->
+        <div welcome-container class=" max-w-screen-lg w-full h-[100vh] px-4 md:px-0 flex flex-col md:flex-row items-center justify-center space-y-10 md:space-y-0 md:space-x-20 pb-5">
+            <div class="max-w-md">
+                <img src="./Chat bot-amico.png" class="w-full select-none">
+            </div>
+            
+            <div class="max-w-md text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl text-blue-950 dark:text-blue-900 font-bold mb-4">CodeBot-<span class="text-blue-800 dark:text-blue-700 animate-pulse">AI</span> </h1>
+                <br>
+                <p class="text-xl md:text-2xl  text-blue-900 mb-8 dark:text-gray-500">Unlock the power of instant assistance! <br>Ask me anything and let's make your day smoother together.</p>
+                <button start-btn class="bg-blue-900 px-7 py-2 rounded-md text-blue-50 font-semibold text-center hover:bg-blue-950">
+                    Start
+                    <i class="fas fa-arrow-right text-sm pl-1"></i>
+                </button>
+                <div class="user-container hidden flex gap-5 select-none justify-center">
+                    <button id="log-in-btn" class="bg-blue-800 px-7 py-2 rounded-md text-blue-50 font-semibold text-center hover:bg-blue-950">
+                        <i class="fa-solid fa-user-plus pr-2 sm:hidden"></i>
+                        Sign-in
+                    </button>
+                    <button id="sign-in-btn" class="bg-slate-800 px-7 py-2 rounded-md text-blue-50 font-semibold text-center hover:bg-slate-900">
+                        <i class="fa-solid fa-user pr-2"></i>
+                        Log-in
+                    </button>
+                    
+                </div>
+                
+            </div>
+        </div>
+
+        
+        
+
+       
+
+        <!-- prompts section -->
+        
+        
+        <div user-container class="hidden w-full h-full flex justify-center ">
+
+          
+    
+            <div back-btn title="back" class="fixed top-5 left-5 z-20  cursor-pointer text-sm lg:text-2xl md:text-xl sm:text-lg hover:scale-[1.2] transition duration-75">
+                <i class="fa-solid fa-chevron-left select-none text-blue-950 dark:text-blue-700 "></i> 
+            </div>
+
+            <div class="fixed top-5 left-[14%] text-sm lg:text-2xl md:text-xl sm:text-lg text-blue-700 select-none font-semibold">
+                CodeBot-<span class="animate-pulse">AI</span>
+            </div>
+
+                <!-- message box -->
+            <div message-box class="w-full flex flex-col   gap-2 lg:p-14 md:p-12 sm:p-4 p-4  ">
+                    
+                    <img src="./12145578_Wavy_Edu-02_Single-05.png" class="z-[-80px] w-[44%] fixed top-[5%] left-[27%]">
+
+                   
+                    <!-- chat response box -->
+                    <!-- <div  chat-response class="w-[90%] relative shadow-lg flex h-auto bg-blue-700 bg-opacity-50 backdrop-blur-sm   text-blue-950 dark:text-white p-2  text-lg rounded-lg group">
+                        <i class="fa-solid fa-robot opacity-0 sm:opacity-0 md:opacity-100 lg:opacity-100 xl:opacity-100 p-0 sm:p-0 md:p-1 lg:p-1.5 xl:p-2"></i>
+                        <div class="p-0 sm:p-0 md:p-1 lg:p-2 xl:p-2 text-blue-950">
+                        <pre response-text class="p-0  sm:p-0 md:p-1 lg:p-2 xl:p-4  bg-transparent bg-opacity-100 rounded-md whitespace-pre-wrap font-sans  dark:text-white text-sm sm:text-sm md:text-md lg:text-md xl:text-lg">Lorem ip Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia voluptatibus sit illo voluptatum accusamus, asperiores architecto saepe dolorem. Rerum maiores unde, minus quo dolorem inventore explicabo eveniet, beatae id at necessitatibus illum tenetur temporibus quidem nihil sint itaque veritatis impedit Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex illo, totam labore molestiae dicta laboriosam incidunt iste delectus modi beatae rerum eum aliquid doloremque consequatur iusto non perferendis recusandae vero tempora ea, consectetur illum. Dolorem, deleniti in. Qui earum itaque aperiam, totam iure quod eius, sunt impedit deserunt architecto corporis. ea accusamus! At voluptates totam assumenda obcaecati tempore sunt qui.sum dolor sit amet, consectetur adipisicing elit. Quibusdam dolores sint libero provident, quia dolor perspiciatis quasi amet voluptates reprehenderit, eius dolorum fugit molestias quaerat commodi voluptate, doloribus ullam itaque. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur, quod.</pre>
+                        </div>
+          
+                        <div class="right-3 top-2 opacity-0 group-hover:opacity-100 p-2 dark:text-slate-400">    
+                            <i copy-btn title="copy" class="fa-regular fa-copy cursor-pointer  hover:text-blue-800"></i>
+                            <i mute-btn title="mute" class="fa-solid fa-volume-xmark cursor-pointer hover:text-red-700"></i>
+                        </div>
+                    </div> -->
+                    
+
+                    <!-- chat message box -->
+                    <!-- <div chat-message class=" w-[90%] left-[9%] bg-slate-500 shadow-lg bg-opacity-50 backdrop-blur-sm relative flex h-auto text-blue-950 dark:text-white p-2 text-lg rounded-lg mb-10">
+                        <div class="flex justify-end  sm:opacity-0 md:opacity-100 lg:opacity-100 xl:opacity-100 p-0 sm:p-0 md:p-1 lg:p-1.5 xl:p-2">
+                            <pre class="p-0 sm:p-0 md:p-1 lg:p-2 xl:p-4  rounded-md bg-opacity-100  font-sans whitespace-pre-wrap text-sm sm:text-sm md:text-md lg:text-md xl:text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id ipsum dolor in at obcaecati veniam exercitationem ut labore qui facilis. Corrupti vel voluptas aut ab nisi odit adipisci animi repudiandae consequuntur molestias magnam distinctio ipsa deserunt consequatur, recusandae eius inventore assumenda incidunt reiciendis ratione asperiores nostrum? Praesentium, repudiandae? Tempora quasi odit fuga in odio, id nostrum quos fugit ipsam labore commodi dolores recusandae dolor, deserunt provident quam suscipit eum vel nemo corporis? Exercitationem error molestias neque in. Quaerat doloremque commodi labore rem quod maxime facere! Officiis commodi, repudiandae cupiditate corporis quia cum. Quia, ex pariatur? Corrupti suscipit ab iste distinctio? Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quia rem nisi quod, cum expedita reprehenderit, sapiente sequi error praesentium soluta velit eligendi repellendus quibusdam distinctio ut. Natus dolores tenetur iusto neque voluptatem pariatur cupiditate, incidunt, iure, corrupti impedit itaque accusantium molestias? Officia ducimus neque magnam veritatis! Sed unde praesentium perferendis atque natus illum excepturi adipisci nulla, minima reiciendis laudantium odit nam autem soluta enim, odio quaerat recusandae voluptatem fugit. Consequuntur rem dignissimos, dolore voluptate voluptatibus perferendis nam nostrum nemo, laudantium perspiciatis sequi tenetur velit minima maiores beatae odit est inci Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, porro amet. Veniam illo, repellendus rem tempore deserunt repellat eaque similique nemo facilis provident soluta quis mollitia sunt sapiente, officia saepe laboriosam ipsum rerum beatae eius quae doloremque eos. Nihil, laudantium! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, repudiandae earum. Dignissimos cum ipsa nemo nostrum soluta, similique quisquam, nihil perferendis perspiciatis adipisci exercitationem minus nisi? Sapiente, quas, voluptate eum quo ullam dolor cumque nulla deleniti quasi quam enim provident! Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero hic odio fuga cumque neque ut recusandae, vitae voluptatibus aut sed consequuntur perspiciatis aliquid deleniti ratione minima impedit voluptas, id, possimus dolorem modi suscipit magni accusamus aperiam. Dolorem laboriosam nihil aspernatur?dunt. Tenetur eius vero veritatis doloremque ullam velit nam earum. Lorem necessitatibus qui fugiat ex a!</pre>
+                            <i class="fa-regular fa-keyboard  text-blue-950   opacity-0 sm:opacity-0 md:opacity-100 lg:opacity-100 xl:opacity-100 p-0 sm:p-0 md:p-1 lg:p-1.5 xl:p-2"></i>
+                        </div>
+                        
+                    </div> -->
+                    
+                    
+                </div>
+
+            
+            
+            
+                
+        </div>
+         
+        
+
+        <div message-bar class="hidden fixed bottom-0 sm:bottom-6 z-0 flex flex-col sm:flex-row w-full sm:w-[76%] p-1 px-4 rounded-xl xl:gap-4 lg:gap-3 md:gap-2 sm:gap-1 ">
+            <button audio-btn class="py-2 px-4 text-xl text-blue-800 dark:text-blue-800 shadow-lg dark:bg-slate-900 bg-gray-300 rounded-full hover:bg-gray-400 dark:hover:text-blue-900 mb-2 sm:mb-0">
+                <i class="fa-solid fa-microphone p-2 text-lg sm:text-lg md:text-2xl lg:text-2xl xl:text-2xl hover:scale-[1.2] transition duration-75"></i>
+            </button>
+        
+            <div class="flex flex-grow max-h-20 bg-gray-300 p-1 px-4 rounded-lg dark:bg-slate-900 shadow-lg">
+                <div class="text-center pt-2 text-2xl text-blue-800">
+                    <i class="fa-regular fa-keyboard text-lg sm:text-lg md:text-2xl lg:text-2xl xl:text-2xl "></i>
+                </div>
+        
+                <textarea message-input placeholder="Enter your prompt here" class="flex-grow resize-none bg-transparent p-0 outline-none rounded-xl dark:text-white text-blue-950 placeholder:text-gray-600 px-4 pt-3"></textarea>
+        
+                <button sendbtn class="text-lg sm:text-lg md:text-2xl lg:text-2xl xl:text-2xl">
+                    <i class="fa-solid fa-paper-plane pl-2 text-blue-800 hover:text-blue-950"></i>
+                </button>
+            </div>
+        </div>
+        
+
+            
+       
+       </div>
+        
+
+        <!-- login page -->
+        <div id="login-page" class="bg-black w-[100vw] z-[-10px] h-[100vh] fixed top-0 bg-opacity-60  hidden"></div>
+
+            <div id="log-in" class="hidden fixed  top-[20%] xl:left-[25%] xl:w-[50%] sm:w-[40%] z-10 flex flex-col xl:gap-6 sm:gap-1 p-1 bg-blue-950 bg-opacity-50 backdrop-blur-sm justify-center items-center rounded-lg">
+                
+                <div class="flex gap-4 p-2">
+
+                        <img src="./login-image.jpg" class="w-[50%] rounded-md">
+                        
+                        <div class="w-full flex flex-col">
+                            <i id="cancel-btn" class="fa-solid fa-circle-xmark fixed right-[-0.3rem] top-[-0.3rem] text-2xl text-blue-600 cursor-pointer hover:text-red-600 dark:text-blue-800"></i>
+                            <p class="text-white text-xl pb-10 text-center">Create Account</p>
+                        
+                    
+                            <div class="w-full flex gap-1 p-2">
+                                <input required type="email"  placeholder="Enter your email" class="email w-full px-2 py-1 mb-4 rounded-md outline-none  bg-white bg-opacity-40 placeholder:text-blue-950 ">
+                            </div>
+                            <div class="w-full flex gap-1 p-2">
+                                <input required type="password" placeholder="Enter Password" class="password px-2 py-1 rounded-md mb-4 outline-none w-full bg-white bg-opacity-40 placeholder:text-blue-950">
+                            </div>
+                        
+                        
+                        
+                            <button id="submit" type="submit"  class="submit w-full bg-blue-900 px-4 py-2  my-6 rounded-md text-blue-50 font-semibold text-center hover:bg-blue-950">
+                                Sign-in 
+                                <i class="fas fa-arrow-right text-sm pl-1 select-none"></i>
+                            </button>
+            
+                            <div  class="google text-center  bg-red-600 p-1 text-white rounded-md hover:bg-red-700 cursor-pointer text-sm">
+                                <i class="fa-brands fa-google text-white text-center p-2 select-none text-sm"></i>
+                                Sign-in with Google
+                            </div>
+                        </div>
+                </div>
+                
+
+            </div>
+
+
+            <!-- sign-in page -->
+            <div id="sign-in-page" class="bg-black w-full z-[-10px] h-[100vh] fixed bg-opacity-60 hidden top-0"></div>
+
+            <div id="sign-in" class="hidden fixed  top-[20%] xl:left-[25%] xl:w-[50%] sm:w-[40%] z-10 flex flex-col xl:gap-6 sm:gap-1 p-1 bg-purple-950 bg-opacity-50 backdrop-blur-sm justify-center items-center rounded-lg">
+                
+                <div class="flex gap-4 p-2">
+
+                    <img src="./signup image.jpg" class="w-[50%] rounded-md">
+
+                    <div class="w-full flex flex-col">
+                        <i id="cancel-btn-2" class="fa-solid fa-circle-xmark fixed right-[-0.3rem] top-[-0.3rem] text-2xl text-purple-600 cursor-pointer hover:text-red-600 dark:text-purple-800"></i>
+                        <p class="text-white text-xl pb-14 text-center">Welcome Back</p>
+                        
+                    
+                        <div class="w-full flex gap-1">
+                            <input required type="email"  placeholder="Email" class="email2 w-full px-2 py-1 mb-8 rounded-md outline-none  bg-white bg-opacity-40 placeholder:text-purple-950">
+                        </div>
+                        <div class="w-full flex gap-1">
+                            <input required type="password" placeholder="Password" class="password2 px-2 py-1 rounded-md mb-3 outline-none w-full bg-white bg-opacity-40 placeholder:text-purple-950">
+                        </div>
+                        
+                        
+                        
+                        <button id="submit2" type="submit"  class="submit w-full bg-purple-900 px-4 py-2  my-8 rounded-md text-purple-50 font-semibold text-center hover:bg-purple-950">
+                            Log-in 
+                            <i class="fas fa-arrow-right text-sm pl-1 select-none"></i>
+                        </button>
+            
+                        <div  class="google text-center  bg-red-600 p-1 text-white rounded-md hover:bg-red-700 cursor-pointer text-sm ">
+                            <i class="fa-brands fa-google text-white text-center p-2 select-none text-sm"></i>
+                            Sign-in with Google
+                        </div>
+                    </div>
+            </div>
+
+            </div>
+           
+
+            
+        
+    </div>
+
+    <script src="https://kit.fontawesome.com/4e5739cf7e.js" crossorigin="anonymous"></script>
+    <script type="module" src="./script.js"></script>
+    <!-- <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+      </script> -->
+</body>
+</html>
